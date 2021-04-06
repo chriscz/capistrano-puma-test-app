@@ -9,7 +9,7 @@
 
 k = File.absolute_path(File.join(__dir__, "../../insecure_key"))
 
-server "localhost", user: "app"
+server "localhost", user: "app", roles: %w{app db web}
 
 set :stage, :production
 set :deploy_to, '/home/app/application'
@@ -25,6 +25,7 @@ set :rsync_checkout, 'revision'
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, 'config/credentials/production.key'
 
 # role-based syntax
 # ==================
