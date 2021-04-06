@@ -23,9 +23,13 @@ set :ssh_options, {
 set :rsync_options, ["-r", "-e", "'ssh -i #{k}'"]
 set :rsync_checkout, 'revision'
 
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'node_modules'
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
 append :linked_files, 'config/credentials/production.key'
+
+set :puma_init_active_record, true
+set :puma_systemctl_user, :user
+set :puma_enable_lingering, false
 
 # role-based syntax
 # ==================

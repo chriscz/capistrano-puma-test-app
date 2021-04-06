@@ -12,7 +12,8 @@ install_plugin Capistrano::SCM::Rsync
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
-install_plugin Capistrano::Puma::Systemd
+# install_plugin Capistrano::Puma::Systemd
+# install_plugin Capistrano::Puma::Daemon
 
 # require 'capistrano/scm/rsync'
 # install_plugin Capistrano::SCM::Rsync

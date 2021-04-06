@@ -1,6 +1,7 @@
 FROM phusion/passenger-full:latest
 RUN apt update
 RUN apt install rsync
+RUN npm install --global yarn
 
 # TODO Reorder the file so that the commands that change least often remain on top!
 
