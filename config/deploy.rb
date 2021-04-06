@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "my_app_name"
-set :repo_url, "."
+set :repo_url, "/deploy/webapp"
 
 # Default branch is :master
 set :branch, `git rev-parse --abbrev-ref HEAD`.chomp

@@ -48,6 +48,7 @@ group :development do
   # gem 'capistrano-scm-rsync'
   # gem "capistrano-rsync"
   gem "capistrano-rsync-bladrak", git: "https://github.com/chriscz/capistrano-rsync"
+  gem "capistrano-rails"
 end
 
 group :test do

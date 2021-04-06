@@ -11,7 +11,7 @@ build:
 test: build ntest
 
 ntest:
-	docker run --rm -it $(IMAGE_NAME) /sbin/my_init -- su app -l -c 'cd /deploy/webapp && ./deploy.sh'
+	docker run --rm -it $(IMAGE_NAME) /sbin/my_init -- su app -l -c 'cd /deploy/webapp && ./deploy.sh; bash'
 	# cd /tmp/webapp && ./deploy.sh
 
 .PHONY=build test ntest

@@ -20,7 +20,11 @@ set :ssh_options, {
   keys: [k]
 }
 
-set :rsync_options, ["-e", "'ssh -i #{k}'"]
+set :rsync_options, ["-r", "-e", "'ssh -i #{k}'"]
+set :rsync_checkout, 'revision'
+
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+# append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 # role-based syntax
 # ==================
