@@ -7,26 +7,20 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-k = File.join(__dir__, "../../insecure_key")
+k = File.absolute_path(File.join(__dir__, "../../insecure_key"))
 
 server "localhost", user: "app"
 
 set :stage, :production
 set :deploy_to, '/home/app/application'
 
-set :rsync_options,
-  source: '.',
-  cache: 'cache',
-  args: {
-    local_to_remote: [],
-    cache_to_release: %w(--archive --acls --xattrs)
-  }
-
 set :ssh_options, {
   forward_agent: false,
   auth_methods: %w[publickey],
   keys: [k]
 }
+
+set :rsync_options, ["-e", "'ssh -i #{k}'"]
 
 # role-based syntax
 # ==================

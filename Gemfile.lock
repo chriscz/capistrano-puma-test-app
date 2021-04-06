@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/chriscz/capistrano-rsync
+  revision: 9a293d8714eef861564f461a2c1132920474f7e4
+  specs:
+    capistrano-rsync-bladrak (1.4.2)
+      capistrano (>= 3.0.0.pre14, < 4)
+
+GIT
+  remote: https://github.com/seuros/capistrano-puma.git
+  revision: 285b45f51d0662e760cc5e75f15614589a2be170
+  branch: master
+  specs:
+    capistrano3-puma (5.0.4)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (>= 4.0, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -74,10 +91,8 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-puma (0.2.3)
-      capistrano (>= 3.0)
-    capistrano-rsync (1.0.2)
-      capistrano (>= 3.0.0.pre14, < 4)
+    capistrano-bundler (2.0.1)
+      capistrano (~> 3.1)
     capybara (3.35.3)
       addressable
       mini_mime (>= 0.1.3)
@@ -222,8 +237,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capistrano
-  capistrano-puma
-  capistrano-rsync
+  capistrano-rsync-bladrak!
+  capistrano3-puma!
   capybara (>= 3.26)
   jbuilder (~> 2.7)
   listen (~> 3.3)

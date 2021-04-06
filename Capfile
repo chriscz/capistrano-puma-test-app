@@ -6,6 +6,9 @@ require "capistrano/deploy"
 
 require "capistrano/rsync"
 
+require 'capistrano/puma'
+install_plugin Capistrano::Puma
+
 # require 'capistrano/scm/rsync'
 # install_plugin Capistrano::SCM::Rsync
 

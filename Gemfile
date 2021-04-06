@@ -44,10 +44,10 @@ group :development do
   gem 'spring'
 
   gem 'capistrano'
-  gem 'capistrano-puma'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma", branch: "master"
   # gem 'capistrano-scm-rsync'
   # gem "capistrano-rsync"
-  gem "capistrano-rsync-bladrak"
+  gem "capistrano-rsync-bladrak", git: "https://github.com/chriscz/capistrano-rsync"
 end
 
 group :test do
